@@ -8,11 +8,7 @@
         body {
             font-family: Arial, sans-serif;
         }
-        .center {
-            width: 50%;
-            margin: 20px auto;
-            text-align: center;
-        }
+        
         .status {
             color: red;
             font-weight: bold;
@@ -23,20 +19,20 @@
 
 <div class="center">
     <h1>座席の予約</h1>
-    <p>東京会場 <span id="status" class="status">（予約受付中）</span></p>
+    <p>東京会場（予約受付中）</p>
     <button id="reserveButton" onclick="reserve()">予約する</button>
     <p id="thankYouMessage" style="display: none; color: blue;">ありがとうございました。</p>
 </div>
 
 <script>
     function reserve() {
-        // 予約受付中のテキストを予約済みに変更
+       
         document.getElementById("status").textContent = "（予約済み）";
         
-        // ボタンを非表示にする
+        
         document.getElementById("reserveButton").style.display = "none";
         
-        // ありがとうございましたのメッセージを表示
+        
         document.getElementById("thankYouMessage").style.display = "block";
     }
 </script>
