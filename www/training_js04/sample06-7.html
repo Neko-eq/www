@@ -37,6 +37,30 @@
     </style>
 </head>
 <body>
+<<<<<<< HEAD
+<div class="center">
+    <h1>座席の予約</h1>
+    <p>東京会場 (予約受付中)</p>
+    <button id="reserveButton" onclick="reserve()">予約する</button>
+    <p id="thankYouMessage">ありがとうございました。</p>
+    </div>
+    <script>
+        function reserve() {
+            // 予約受付中のテキストを予約済みに変更
+            document.getElementById("status").textContent = "（予約済み）";
+            
+            // ボタンを非表示にする
+            document.getElementById("reserveButton").style.display = "none";
+            
+            // ありがとうございましたのメッセージを表示
+            document.getElementById("thankYouMessage").style.display = "block";
+        }
+    </script>
+    
+    </body>
+    </html>
+    
+=======
 
 <h1 style="text-align:center;">利用料の計算</h1>
 
@@ -82,3 +106,5 @@
 
 
 
+
+>>>>>>> 055cc2eb5633e668c834bfc65c2906b827892365
