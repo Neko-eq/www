@@ -3,41 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>利用料の計算</title>
+    <title>座席の予約</title>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
-        table {
+        .center {
             width: 50%;
             margin: 20px auto;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
             text-align: center;
         }
-        th {
-            background-color: #f2a679;
-        }
-        td {
-            background-color: #fdf2e9;
-        }
-        button {
-            padding: 5px 10px;
-            background-color: #f5b041;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #d35400;
+        .status {
+            color: red;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
-<<<<<<< HEAD
 <div class="center">
     <h1>座席の予約</h1>
     <p>東京会場 (予約受付中)</p>
@@ -60,51 +42,3 @@
     </body>
     </html>
     
-=======
-
-<h1 style="text-align:center;">利用料の計算</h1>
-
-<table>
-    <tr>
-        <th>No.</th>
-        <th>料金(a)</th>
-        <th>人数(b)</th>
-        <th>a×b</th>
-    </tr>
-    <tr>
-        <td>0</td>
-        <td>500</td>
-        <td>10</td>
-        <td><button onclick="multiply(0)">利用料の合計</button></td>
-    </tr>
-    <tr>
-        <td>1</td>
-        <td>980</td>
-        <td>16</td>
-        <td><button onclick="multiply(1)">利用料の合計</button></td>
-    </tr>
-    <tr>
-        <td>2</td>
-        <td>1200</td>
-        <td>8</td>
-        <td><button onclick="multiply(2)">利用料の合計</button></td>
-    </tr>
-</table>
-
-<script>
-    let a = [500, 980, 1200];
-    let b = [10, 16, 8];
-
-    function multiply(i) {
-        let answer = a[i] * b[i];
-        alert("このページの内容:\n料金は" + answer + "円です");
-    }
-</script>
-
-</body>
-</html>
-
-
-
-
->>>>>>> 055cc2eb5633e668c834bfc65c2906b827892365
