@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>複数の要素の取得</title>
+  </head>
+<body>
+    <h1>人口の多い国ランキング</h1>
+    <ul class="country-list" id="countryList">
+        <li id="country1">1. 中国</li>
+        <li id="country2">2. インド</li>
+        <li id="country3">3. アメリカ</li>
+        <li id="country4">4. インドネシア</li>
+    </ul>
+    <button onclick="displayFlags()">国旗で表示</button>
+
+    <script>
+        function displayFlags() {
+            document.getElementById("country1").innerHTML = '1. <img src="Neko-eq/www/www/training_js05/flag_CHN.png" alt="中国の国旗" width="50">';
+            document.getElementById("country2").innerHTML = '2. <img src="Neko-eq/www/www/training_js05/flag_IDN.png" alt="インドの国旗" width="50">';
+            document.getElementById("country3").innerHTML = '3. <img src="Neko-eq/www/www/training_js05/flag_IND.png" alt="アメリカの国旗" width="50">';
+            document.getElementById("country4").innerHTML = '4. <img src="Neko-eq/www/www/training_js05/flag_USA.png" alt="インドネシアの国旗" width="50">';
+        }
+    </script>
+</body>
+</html>
