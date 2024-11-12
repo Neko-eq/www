@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>要素の追加と削除</title>
+</head>
+<style>
+    img {
+        display: none;
+    }
+</style>
+<body>
+    <h1>写真の一覧</h1>
+    <p>以下のボタンをクリックすると、写真の一覧が表示されます</p>
+    <div id="buttonContainer">
+        <button id="showImagesBtn">画像を表示</button>
+    </div>
+    <div id="imageContainer">
+        <img src="photo_1.jpg" alt="Image 1">
+        <img src="photo_2.jpg" alt="Image 2">
+        <img src="photo_3.jpg" alt="Image 3">
+        <img src="photo_4.jpg" alt="Image 4">
+        <img src="photo_5.jpg" alt="Image 5">
+        <img src="photo_6.jpg" alt="Image 6">
+        <img src="photo_7.jpg" alt="Image 7">
+        <img src="photo_8.jpg" alt="Image 8">
+    </div>
+    <script>
+        document.getElementById('showImagesBtn').addEventListener('click', function() {
+            // ボタンを削除しつつ、画像を順次表示
+            document.getElementById('buttonContainer').insertAdjacentHTML('beforeend', '<style>#showImagesBtn { display: none; }</style>');
+            
+            const images = document.querySelectorAll('#imageContainer img');
+            images.forEach((img, index) => {
+                setTimeout(() => {
+                    img.style.display = 'block';
+                }, index * 300); // 画像ごとに表示を遅延（0.3秒間隔）
+            });
+        });
+    </script>
+</body>
+</html>
