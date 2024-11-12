@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>入場料の一覧</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: skyblue;
+            font-weight: bold;
+        }
+        caption {
+            font-weight: bold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table id="priceTable">
+        <caption>入場料の一覧</caption>
+    </table>
+
+    <script>
+        // 料金表データ
+        const priceData = {
+            headers: ["人数", "大人", "高校生", "中学生", "小学生"],
+            rows: [
+                { people: "1人", prices: ["800円", "680円", "450円", "380円"] },
+                { people: "2人", prices: ["1600円", "1360円", "900円", "760円"] },
+                { people: "3人", prices: ["2400円", "2040円", "1350円", "1140円"] },
+                { people: "4人", prices: ["3200円", "2720円", "1800円", "1520円"] },
+                { people: "5人", prices: ["4000円", "3400円", "2250円", "1900円"] }
+            ]
+        };
+
+        
+        function createTable() {
+            const table = document.getElementById('priceTable');
+            const thead = document.createElement('thead');
+            const tbody = document.createElement('tbody');
+
+            
+            const headerRow = document.createElement('tr');
+            priceData.headers.forEach(header => {
+                const th = document.createElement('th');
+                th.textContent = header;
+                headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+
+            
+            priceData.rows.forEach(rowData => {
+                const row = document.createElement('tr');
+                
+                
+                const peopleCell = document.createElement('td');
+                peopleCell.textContent = rowData.people;
+                row.appendChild(peopleCell);
+
+                
+                rowData.prices.forEach(price => {
+                    const priceCell = document.createElement('td');
+                    priceCell.textContent = price;
+                    row.appendChild(priceCell);
+                });
+
+                tbody.appendChild(row);
+            });
+
+            table.appendChild(thead);
+            table.appendChild(tbody);
+        }
+
+        
+        createTable();
+    </script>
+</body>
+</html>

@@ -27,14 +27,13 @@
     </div>
     <script>
         document.getElementById('showImagesBtn').addEventListener('click', function() {
-            // ボタンを削除しつつ、画像を順次表示
             document.getElementById('buttonContainer').insertAdjacentHTML('beforeend', '<style>#showImagesBtn { display: none; }</style>');
             
             const images = document.querySelectorAll('#imageContainer img');
             images.forEach((img, index) => {
                 setTimeout(() => {
                     img.style.display = 'block';
-                }, index * 300); // 画像ごとに表示を遅延（0.3秒間隔）
+                }, index * 300); 
             });
         });
     </script>
