@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件分岐</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        .hint, .answer {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>問題</h1>
+    <p>最も面積が大きい「県」は何県でしょう？</p>
+    <button id="hintButton">ヒントを見る</button>
+    <div class="hint" id="hint" style="display: none;">東北地方にあります。</div>
+    <div class="answer" id="answer" style="display: none;">答えは「岩手県」です。</div>
+
+    <script>
+        let clickCount = 0;
+
+        document.getElementById('hintButton').addEventListener('click', () => {
+            clickCount++;
+            if (clickCount === 1) {
+                document.getElementById('hint').style.display = 'block';
+                document.getElementById('hintButton').textContent = '答えを見る';
+            } else if (clickCount === 2) {
+                
+                document.getElementById('answer').style.display = 'block';
+                document.getElementById('hintButton').style.display = 'none'; 
+            }
+        });
+    </script>
+</body>
+</html>
