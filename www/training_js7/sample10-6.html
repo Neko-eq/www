@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>条件分岐 (switch版)</title>
+    <title>条件分岐</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -40,18 +40,13 @@
 
     <script>
         function check(x) {
-            let result;
-            switch (x) {
-                case 2:
-                case 4:
-                    result = "正解！";
-                    break;
-                default:
-                    result = "間違い！";
-                    break;
+            if (x === 2 || x === 4) {
+                document.getElementById("result").textContent = "正解！";
+            } else {
+                document.getElementById("result").textContent = "間違い！";
             }
-            document.getElementById("result").textContent = result;
         }
     </script>
 </body>
 </html>
+
