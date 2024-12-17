@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数値の入力とエラー処理</title>
+</head>
+<body>
+    <h1>n~mで割り切れる数字</h1>
+    <p>1~10の好きな範囲で割り切れる最小の数値をJavaScriptで求めます。</p>
+    <button onclick="result()">ここに結果が表示されます</button>
+    <script>
+        function gcd(a,b) {
+            return b === 0 ? a : gcd(b, a % b);
+        }
+        function lcm(a,b){
+            return (a * b) / gcd(a,b);
+        }
+        function findsmaall(){
+            let minRange = prompt("範囲の最小値を1～10で入力してください。");
+            let MaxRange = prompt("範囲の最大値を1～10で入力してください。");
+                minRange = parseInt(minRange);
+                MaxRange = parseInt(MaxRange);
+
+                if (isNaN(minRange) || isNaN(MaxRange) || minRange < 1 || MaxRange > 10 || minRange > MaxRange)
+                {alert("入力が正しくありません。1～10までの範囲で入力してください");
+                    return;
+                }
+            let result = minRange
+            for(let i = minRange + 1; <= MaxRange; i++){
+                result = lcm(result,i);
+            }
+            document.getElementById("result").innerText = `${minRange}～${maxRange}で割り切れる最小の数値は${result}です。`;
+
+            }
+        
+    </script>
+</body>
+</html>
